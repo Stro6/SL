@@ -1,0 +1,13 @@
+{
+  "name": "Stromatic Media",
+  "short_name": "Stromatic",
+  "description": "Growth infrastructure agency engineering performance advertising, dynamic content, and brand systems that compound revenue.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FDFBFF",
+  "theme_color": "#FDFBFF",
+  "icons": [
+    {"src": "/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png"}
+  ]
+}
