@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="color-scheme" content="light"/>
+<title>1:1 Mentor call — $40 | Stromatic Media</title>
+<meta name="description" content="$40 for a live 30-minute video call with a matched expert — analytics, paid media, YouTube, or growth strategy."/>
+<link rel="canonical" href="./mentor-1on1.html"/>
+<link rel="icon" href="../favicon.ico" sizes="any"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gabarito:wght@500;700;800;900&family=Manrope:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"/>
+<link rel="stylesheet" href="../assets/css/tokens.css"/>
+<link rel="stylesheet" href="../assets/css/base.css"/>
+<link rel="stylesheet" href="../assets/css/pages-services.css"/>
+<meta property="og:title" content="1:1 Mentor call | Stromatic Media"/>
+<meta property="og:description" content="30 minutes with the specialist you choose — $40"/>
+<meta property="og:image" content="../og-cover.jpg"/>
+</head>
+<body>
+<a href="#main" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden">Skip to main content</a>
+
+<nav id="nv" aria-label="Primary">
+  <a href="../stromatic-media.html" class="nlogo"><span class="lsym" aria-hidden="true"></span>Stromatic Media</a>
+  <ul class="nlinks">
+    <li><a href="./">Fixed-price</a></li>
+    <li><a href="../stromatic-media.html#contact">Contact</a></li>
+  </ul>
+  <a href="../stromatic-media.html#contact" class="ncta"><span>Get an Audit</span></a>
+</nav>
+
+<main id="main" class="page-main">
+  <div class="container">
+    <a href="./" class="back-link">&larr; All fixed-price services</a>
+
+    <p class="svc-meta">30 min · live 1:1 · $40.00 · schedule within 3–5 business days</p>
+    <h1 class="svc-title">1:1 Mentor <em>call</em></h1>
+    <p class="svc-desc">$40 for a live 30-minute video call with a matched expert — social analytics, paid media (including Google Ads), YouTube, or growth strategy. Pick your track below, share your URLs and handles, then checkout. We email you to schedule within a few business days.</p>
+    <ul class="svc-highlights">
+      <li>$40 · 30-minute focused session</li>
+      <li>Choose specialist: social, Google Ads, YouTube, or more</li>
+      <li>Bring URLs, handles & goals — we prep before the call</li>
+    </ul>
+
+    <div class="brief-wrap">
+      <h2>Your brief</h2>
+      <form id="brief-form" action="#" method="post" novalidate>
+        <input type="hidden" name="serviceId" value="mentor-1on1"/>
+
+        <div class="form-field">
+          <label for="mentorTrack">Specialist / focus <span aria-hidden="true">*</span></label>
+          <select id="mentorTrack" name="mentorTrack" required>
+            <option value="" disabled selected>Select one</option>
+            <option>Social Media Analytics &amp; Organic Growth</option>
+            <option>Meta / Instagram (Organic + Ads)</option>
+            <option>Google Ads — Search, PMax &amp; YouTube Campaigns</option>
+            <option>YouTube — Analytics, Packaging &amp; Discovery</option>
+            <option>TikTok — Content &amp; Growth</option>
+            <option>LinkedIn — B2B &amp; Thought Leadership</option>
+            <option>Cross-Channel Attribution &amp; Measurement</option>
+            <option>General Growth &amp; Funnel Strategy</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="primaryUrl">Primary website or profile URL</label>
+          <input id="primaryUrl" name="primaryUrl" type="url" placeholder="https://" maxlength="200"/>
+        </div>
+
+        <div class="form-field">
+          <label for="socialAccounts">Accounts, ads & links to review <span aria-hidden="true">*</span></label>
+          <textarea id="socialAccounts" name="socialAccounts" required maxlength="2000" placeholder="@handles on Instagram, TikTok, LinkedIn, etc. · Google Ads / Meta Business Manager notes (read-only is fine) · GA4 or storefront URLs."></textarea>
+        </div>
+
+        <div class="form-field">
+          <label for="topGoals">What you want out of the 30 minutes <span aria-hidden="true">*</span></label>
+          <textarea id="topGoals" name="topGoals" required maxlength="1500" placeholder="E.g. audit campaign structure, debug ROAS, content gaps, audience targeting…"></textarea>
+        </div>
+
+        <div class="form-field">
+          <label for="timeZone">Time zone & best times to meet <span aria-hidden="true">*</span></label>
+          <textarea id="timeZone" name="timeZone" required class="compact" maxlength="200" placeholder="Example:&#10;America/Toronto&#10;Weekdays 10am–4pm ET"></textarea>
+        </div>
+
+        <button type="submit" class="bpri" disabled aria-describedby="checkout-hint"><span>Continue to payment · $40.00</span></button>
+        <p id="checkout-hint" class="checkout-note">Checkout connects next — your brief is saved locally until Stripe is wired to this page.</p>
+      </form>
+    </div>
+  </div>
+</main>
+
+<footer class="site-ft">
+  <div class="container ft-inner">
+    <p style="color:var(--ink-s);font-size:0.88rem">&copy; Stromatic Media</p>
+    <div class="ft-links"><a href="./">Fixed-price services</a><a href="../privacy-policy.html">Privacy</a></div>
+  </div>
+</footer>
+
+<script src="../assets/js/form.js"></script>
+<script>
+const nav=document.getElementById('nv');
+window.addEventListener('scroll',()=>{nav.classList.toggle('sc',window.scrollY>40);},{passive:true});
+nav.classList.toggle('sc',window.scrollY>40);
+</script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="color-scheme" content="light"/>
+<title>Logo Pack — $99.99 | Stromatic Media</title>
+<meta name="description" content="Four logo directions with transparent PNG + SVG, light & dark variants — 24-hour delivery."/>
+<link rel="canonical" href="./logo-pack.html"/>
+<link rel="icon" href="../favicon.ico" sizes="any"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gabarito:wght@500;700;800;900&family=Manrope:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"/>
+<link rel="stylesheet" href="../assets/css/tokens.css"/>
+<link rel="stylesheet" href="../assets/css/base.css"/>
+<link rel="stylesheet" href="../assets/css/pages-services.css"/>
+<meta property="og:title" content="Logo Pack | Stromatic Media"/>
+<meta property="og:description" content="Four distinct logo directions — $99.99"/>
+<meta property="og:image" content="../og-cover.jpg"/>
+</head>
+<body>
+<a href="#main" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden">Skip to main content</a>
+
+<nav id="nv" aria-label="Primary">
+  <a href="../stromatic-media.html" class="nlogo"><span class="lsym" aria-hidden="true"></span>Stromatic Media</a>
+  <ul class="nlinks">
+    <li><a href="./">Fixed-price</a></li>
+    <li><a href="../stromatic-media.html#contact">Contact</a></li>
+  </ul>
+  <a href="../stromatic-media.html#contact" class="ncta"><span>Get an Audit</span></a>
+</nav>
+
+<main id="main" class="page-main">
+  <div class="container">
+    <a href="./" class="back-link">&larr; All fixed-price services</a>
+
+    <p class="svc-meta">24-hour turnaround · $99.99</p>
+    <h1 class="svc-title">Logo <em>Pack</em></h1>
+    <p class="svc-desc">Four distinct logo directions tailored to your brand, each delivered with transparent backgrounds and ready-to-ship file formats.</p>
+    <ul class="svc-highlights">
+      <li>4 unique logo directions</li>
+      <li>Transparent PNG + SVG</li>
+      <li>Light & dark variants</li>
+      <li>24-hour delivery</li>
+    </ul>
+
+    <div class="brief-wrap">
+      <h2>Your brief</h2>
+      <form id="brief-form" action="#" method="post" novalidate>
+        <input type="hidden" name="serviceId" value="logo-pack"/>
+
+        <div class="form-field">
+          <label for="businessName">Business name <span aria-hidden="true">*</span></label>
+          <input id="businessName" name="businessName" type="text" required placeholder="e.g. Northwind Coffee" maxlength="80"/>
+        </div>
+
+        <div class="form-field">
+          <label for="industry">Industry <span aria-hidden="true">*</span></label>
+          <input id="industry" name="industry" type="text" required placeholder="e.g. Specialty coffee roaster" maxlength="80"/>
+        </div>
+
+        <div class="form-field">
+          <label for="vibe">Vibe <span aria-hidden="true">*</span></label>
+          <select id="vibe" name="vibe" required>
+            <option value="" disabled selected>Select one</option>
+            <option>Modern</option>
+            <option>Playful</option>
+            <option>Elegant</option>
+            <option>Bold</option>
+            <option>Minimalist</option>
+            <option>Retro</option>
+            <option>Luxury</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="colors">Color preferences</label>
+          <input id="colors" name="colors" type="text" placeholder="e.g. Earthy greens & cream" maxlength="200"/>
+        </div>
+
+        <div class="form-field">
+          <label for="mustHave">Must-have elements</label>
+          <textarea id="mustHave" name="mustHave" maxlength="500" placeholder="Symbols, motifs, or shapes you want included."></textarea>
+        </div>
+
+        <div class="form-field">
+          <label for="avoid">Things to avoid</label>
+          <textarea id="avoid" name="avoid" maxlength="500" placeholder="Anything you definitely do not want."></textarea>
+        </div>
+
+        <div class="form-field">
+          <label for="notes">Anything else?</label>
+          <textarea id="notes" name="notes" maxlength="1000" placeholder="Inspiration, references, or context."></textarea>
+        </div>
+
+        <button type="submit" class="bpri" disabled aria-describedby="checkout-hint"><span>Continue to payment · $99.99</span></button>
+        <p id="checkout-hint" class="checkout-note">Checkout connects next — your brief is saved locally until Stripe is wired to this page.</p>
+      </form>
+    </div>
+  </div>
+</main>
+
+<footer class="site-ft">
+  <div class="container ft-inner">
+    <p style="color:var(--ink-s);font-size:0.88rem">&copy; Stromatic Media</p>
+    <div class="ft-links"><a href="./">Fixed-price services</a><a href="../privacy-policy.html">Privacy</a></div>
+  </div>
+</footer>
+
+<script src="../assets/js/form.js"></script>
+<script>
+const nav=document.getElementById('nv');
+window.addEventListener('scroll',()=>{nav.classList.toggle('sc',window.scrollY>40);},{passive:true});
+nav.classList.toggle('sc',window.scrollY>40);
+</script>
+</body>
+</html>

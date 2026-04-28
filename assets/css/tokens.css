@@ -1,0 +1,24 @@
+:root {
+  --ink: #130925;
+  --ink-2: #261549;
+  --ink-s: #544770;
+  --ink-m: #867aa0;
+  --cream: #fdfbff;
+  --btn: #1c1038;
+  --btn-h: #2a1a52;
+  --lav: #e8defe;
+  --pink: #ffd4ec;
+  --cyan: #c7ecff;
+  --iri-1: #b8a5ff;
+  --iri-2: #ffb0e0;
+  --iri-3: #9cdeff;
+  --chrome: linear-gradient(135deg, #b8a5ff 0%, #ffb0e0 35%, #9cdeff 70%, #c8b8ff 100%);
+  --glass: rgba(255, 255, 255, 0.35);
+  --glass-b: rgba(255, 255, 255, 0.55);
+  --bo: rgba(255, 255, 255, 0.7);
+  --bo-d: rgba(75, 60, 110, 0.12);
+  --fd: "Gabarito", sans-serif;
+  --fb: "Manrope", sans-serif;
+  --fm: "JetBrains Mono", monospace;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}

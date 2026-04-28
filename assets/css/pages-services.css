@@ -1,0 +1,258 @@
+/* Service catalog + detail pages */
+.svc-hero {
+  margin-bottom: 3rem;
+}
+
+.svc-title {
+  font-family: var(--fd);
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  margin-bottom: 0.75rem;
+}
+
+.svc-title em {
+  font-style: italic;
+  font-weight: 700;
+  background: linear-gradient(135deg, #7a63ff 0%, #d066c0 50%, #5fa8e0 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.svc-meta {
+  font-family: var(--fm);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-s);
+  margin-bottom: 1rem;
+}
+
+.svc-price {
+  font-family: var(--fd);
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--ink-2);
+  margin-bottom: 1rem;
+}
+
+.svc-desc {
+  font-size: 1.05rem;
+  line-height: 1.72;
+  color: var(--ink-s);
+  max-width: 640px;
+}
+
+.svc-highlights {
+  margin: 1.75rem 0 0;
+  padding-left: 1.25rem;
+  color: var(--ink-2);
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+.svc-highlights li {
+  margin-bottom: 0.35rem;
+}
+
+/* Catalog grid */
+.svc-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 700px) {
+  .svc-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .svc-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+.svc-card {
+  padding: 2rem;
+  border-radius: 24px;
+  background: var(--glass);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--bo);
+  box-shadow: 0 10px 40px rgba(184, 165, 255, 0.12);
+  transition:
+    transform 0.25s var(--ease),
+    box-shadow 0.25s;
+}
+
+.svc-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 48px rgba(184, 165, 255, 0.2);
+}
+
+.svc-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.svc-card-name {
+  font-family: var(--fd);
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.svc-card-price {
+  font-family: var(--fm);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+
+.svc-card-tag {
+  font-size: 0.92rem;
+  color: var(--ink-s);
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
+}
+
+.svc-card .bpri {
+  display: inline-flex;
+}
+
+.bpri {
+  font-family: var(--fb);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  padding: 1rem 1.85rem;
+  border-radius: 999px;
+  background: var(--btn);
+  color: #fdfbff;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    0 12px 36px rgba(184, 165, 255, 0.3),
+    0 3px 10px rgba(28, 16, 56, 0.2);
+  transition:
+    transform 0.25s var(--ease),
+    box-shadow 0.25s,
+    background 0.2s;
+}
+
+.bpri:hover {
+  transform: translateY(-2px);
+  background: var(--btn-h);
+}
+
+/* Brief form */
+.brief-wrap {
+  margin-top: 3rem;
+  padding: 2rem;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid var(--bo-d);
+  max-width: 720px;
+}
+
+.brief-wrap h2 {
+  font-family: var(--fd);
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: var(--ink);
+}
+
+.form-field {
+  margin-bottom: 1.35rem;
+}
+
+.form-field label {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--ink-2);
+  margin-bottom: 0.45rem;
+}
+
+.form-field input[type="text"],
+.form-field input[type="url"],
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--bo-d);
+  background: rgba(255, 255, 255, 0.85);
+  font-family: var(--fb);
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+
+.form-field textarea {
+  min-height: 120px;
+  resize: vertical;
+  line-height: 1.55;
+}
+
+.form-field textarea.compact {
+  min-height: 88px;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  outline: 2px solid rgba(122, 99, 255, 0.35);
+  outline-offset: 1px;
+}
+
+.checkout-note {
+  font-size: 0.88rem;
+  color: var(--ink-s);
+  margin-top: 0.75rem;
+  line-height: 1.5;
+}
+
+button.bpri:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+button.bpri:disabled:hover {
+  background: var(--btn);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    0 12px 36px rgba(184, 165, 255, 0.3),
+    0 3px 10px rgba(28, 16, 56, 0.2);
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ink-s);
+  text-decoration: none;
+  margin-bottom: 2rem;
+}
+
+.back-link:hover {
+  color: var(--ink);
+}
