@@ -30,6 +30,24 @@
 <meta name="twitter:description" content="Need multiple deliverables or a custom scope? Submit a quick brief and get a custom package recommendation with pricing."/>
 <meta name="twitter:image" content="https://stromatic.tech/assets/img/og-default.png"/>
 <script defer data-domain="stromatic.tech" src="https://plausible.io/js/script.js"></script>
+<style>
+.custom-needs{margin-bottom:1.35rem}
+.needs-grid{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:.6rem}
+.need-chip{position:relative}
+.need-chip input{position:absolute;opacity:0;pointer-events:none}
+.need-chip span{
+  display:inline-flex;align-items:center;
+  padding:.5rem .78rem;border-radius:999px;
+  border:1px solid var(--bo-d);background:rgba(255,255,255,.8);
+  color:var(--ink-s);font-size:.82rem;font-weight:600;cursor:pointer;
+  transition:all .18s ease;
+}
+.need-chip input:checked + span{
+  background:rgba(122,99,255,.14);
+  border-color:rgba(122,99,255,.42);
+  color:var(--ink-2);
+}
+</style>
 </head>
 <body>
 <a href="#main" class="skip-link">Skip to main content</a>
@@ -85,6 +103,18 @@
         <div class="form-field">
           <label for="website">Website or profile URL</label>
           <input id="website" name="website" type="url" placeholder="https://" maxlength="200"/>
+        </div>
+
+        <div class="form-field">
+          <label>What do you need most?</label>
+          <div class="needs-grid custom-needs">
+            <label class="need-chip"><input type="checkbox" name="need_logo" value="Logo"/><span>Logo</span></label>
+            <label class="need-chip"><input type="checkbox" name="need_seo" value="SEO"/><span>SEO</span></label>
+            <label class="need-chip"><input type="checkbox" name="need_brand" value="Brand kit"/><span>Brand kit</span></label>
+            <label class="need-chip"><input type="checkbox" name="need_paid" value="Paid ads"/><span>Paid ads</span></label>
+            <label class="need-chip"><input type="checkbox" name="need_social" value="Social content"/><span>Social content</span></label>
+            <label class="need-chip"><input type="checkbox" name="need_strategy" value="Strategy"/><span>Strategy</span></label>
+          </div>
         </div>
 
         <div class="form-field">
