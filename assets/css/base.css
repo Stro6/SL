@@ -40,18 +40,18 @@ body::before {
 }
 
 .skip-link {
-  position: absolute;
-  left: -9999px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
+  position: absolute !important;
+  left: -9999px !important;
+  top: auto !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
 }
 
 .skip-link:focus {
-  position: fixed;
-  left: 1rem;
-  top: 1rem;
+  position: fixed !important;
+  left: 1rem !important;
+  top: 1rem !important;
   z-index: 1000;
   padding: 0.5rem 1rem;
   background: var(--btn);
