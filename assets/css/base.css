@@ -135,11 +135,12 @@ nav#nv.sc {
   height: 28px;
   border-radius: 50%;
   flex-shrink: 0;
-  background: var(--chrome);
+  background: radial-gradient(circle at 30% 30%, #b39cf7 0%, #8b73de 45%, #5f4cb0 100%);
+  border: 1px solid rgba(69, 50, 132, 0.28);
   box-shadow:
-    inset -4px -4px 10px rgba(120, 100, 180, 0.25),
-    inset 2px 2px 6px rgba(255, 255, 255, 0.7),
-    0 4px 12px rgba(184, 165, 255, 0.3);
+    inset -4px -4px 10px rgba(70, 50, 130, 0.35),
+    inset 2px 2px 6px rgba(255, 255, 255, 0.35),
+    0 6px 14px rgba(95, 76, 176, 0.35);
 }
 
 .nlogo img.lsym {
