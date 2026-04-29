@@ -135,17 +135,18 @@ nav#nv.sc {
   height: 28px;
   border-radius: 50%;
   flex-shrink: 0;
-  background: radial-gradient(circle at 30% 30%, #b39cf7 0%, #8b73de 45%, #5f4cb0 100%);
-  border: 1px solid rgba(69, 50, 132, 0.28);
+  background: radial-gradient(circle at 30% 30%, #c1affc 0%, #8f79df 46%, #6652bb 100%);
+  border: 1px solid rgba(66, 49, 133, 0.36);
   box-shadow:
-    inset -4px -4px 10px rgba(70, 50, 130, 0.35),
-    inset 2px 2px 6px rgba(255, 255, 255, 0.35),
-    0 6px 14px rgba(95, 76, 176, 0.35);
+    inset -4px -4px 10px rgba(70, 51, 143, 0.36),
+    inset 2px 2px 6px rgba(255, 255, 255, 0.38),
+    0 6px 14px rgba(99, 77, 181, 0.34);
 }
 
 .nlogo img.lsym {
   object-fit: cover;
   background: transparent;
+  filter: contrast(1.18) saturate(1.08) drop-shadow(0 1px 2px rgba(18, 9, 37, 0.28));
 }
 
 .nlinks {

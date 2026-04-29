@@ -222,11 +222,11 @@ nav.sc{
 .nlogo{font-family:var(--fd);font-weight:800;font-size:1.4rem;letter-spacing:-.025em;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:.6rem}
 .lsym{
   width:28px;height:28px;border-radius:50%;flex-shrink:0;
-  background:radial-gradient(circle at 30% 30%,#b39cf7 0%,#8b73de 45%,#5f4cb0 100%);
-  border:1px solid rgba(69,50,132,.28);
-  box-shadow:inset -4px -4px 10px rgba(70,50,130,.35),inset 2px 2px 6px rgba(255,255,255,.35),0 6px 14px rgba(95,76,176,.35);
+  background:radial-gradient(circle at 30% 30%,#c1affc 0%,#8f79df 46%,#6652bb 100%);
+  border:1px solid rgba(66,49,133,.36);
+  box-shadow:inset -4px -4px 10px rgba(70,51,143,.36),inset 2px 2px 6px rgba(255,255,255,.38),0 6px 14px rgba(99,77,181,.34);
 }
-.nlogo img.lsym{display:block;object-fit:cover;background:transparent}
+.nlogo img.lsym{display:block;object-fit:cover;background:transparent;filter:contrast(1.18) saturate(1.08) drop-shadow(0 1px 2px rgba(18,9,37,.28))}
 .nlinks{display:flex;gap:2rem;list-style:none}
 .nlinks a{font-family:var(--fb);font-size:.88rem;font-weight:500;color:var(--ink-s);text-decoration:none;transition:color .2s}
 .nlinks a:hover{color:var(--ink)}
@@ -944,6 +944,7 @@ footer{
   <ul class="nlinks">
     <li><a href="#approach">How it works</a></li>
     <li><a href="./services/">Services</a></li>
+    <li><a href="#contact">Free audit</a></li>
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -970,7 +971,7 @@ footer{
       <p class="hdesc">Studio-grade brand and growth work, delivered in 24 hours. Pick a service, share your brief, and we handle the rest &mdash; no retainers, no calls, no sales theater.</p>
       <div class="hact">
         <a href="./services/" class="bpri" onclick="window.plausible && plausible('CTA Hero Browse')"><span>Browse services</span></a>
-        <a href="#approach" class="bsec">How it works</a>
+        <a href="#contact" class="bsec" onclick="window.plausible && plausible('CTA Hero Free Audit')">Get free audit</a>
       </div>
     </div>
   </div>
@@ -987,6 +988,7 @@ footer{
       <article class="home-svc-card"><a href="./services/logo-pack.html" class="home-svc-link" onclick="window.plausible && plausible('Service Card Click', { props: { service: 'logo-pack' } })"><span class="home-svc-price">$99.99</span><h3 class="home-svc-name">Logo Pack</h3><p class="home-svc-blurb">Four directions. One identity.</p><span class="home-svc-cta">Start brief &rarr;</span></a></article>
       <article class="home-svc-card"><a href="./services/seo-audit.html" class="home-svc-link" onclick="window.plausible && plausible('Service Card Click', { props: { service: 'seo-audit' } })"><span class="home-svc-price">$199.99</span><h3 class="home-svc-name">Full SEO Audit</h3><p class="home-svc-blurb">Technical and content audit as a PDF.</p><span class="home-svc-cta">Start brief &rarr;</span></a></article>
       <article class="home-svc-card"><a href="./services/brand-kit.html" class="home-svc-link" onclick="window.plausible && plausible('Service Card Click', { props: { service: 'brand-kit' } })"><span class="home-svc-price">$149.99</span><h3 class="home-svc-name">Brand Kit</h3><p class="home-svc-blurb">Voice, palette, and usage in one guide.</p><span class="home-svc-cta">Start brief &rarr;</span></a></article>
+      <article class="home-svc-card"><a href="./services/custom-package.html" class="home-svc-link" onclick="window.plausible && plausible('Service Card Click', { props: { service: 'custom-package' } })"><span class="home-svc-price">Custom quote</span><h3 class="home-svc-name">Custom Package</h3><p class="home-svc-blurb">Tailored scope for multi-service or custom needs.</p><span class="home-svc-cta">Get quote &rarr;</span></a></article>
     </div>
   </div>
 </section>
