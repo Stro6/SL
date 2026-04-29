@@ -70,7 +70,7 @@ body::before {
 }
 
 /* NAV — matches stromatic-media.html */
-nav {
+nav#nv {
   position: fixed;
   top: 0;
   left: 0;
@@ -84,12 +84,12 @@ nav {
 }
 
 @media (min-width: 900px) {
-  nav {
+  nav#nv {
     padding: 1.1rem 2.5rem;
   }
 }
 
-nav.sc {
+nav#nv.sc {
   background: rgba(253, 251, 255, 0.7);
   backdrop-filter: blur(24px) saturate(1.4);
   -webkit-backdrop-filter: blur(24px) saturate(1.4);
@@ -98,7 +98,7 @@ nav.sc {
 }
 
 @media (min-width: 900px) {
-  nav.sc {
+  nav#nv.sc {
     padding: 0.85rem 2.5rem;
   }
 }
