@@ -247,6 +247,7 @@
   color: var(--color-text-dim, #8b7aa8);
   margin-top: 12px;
   line-height: 1.5;
+  text-align: center;
 }
 
 .form-disclaimer a {

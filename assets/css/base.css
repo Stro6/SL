@@ -133,6 +133,11 @@ nav#nv.sc {
     0 4px 12px rgba(184, 165, 255, 0.3);
 }
 
+.nlogo img.lsym {
+  object-fit: cover;
+  background: transparent;
+}
+
 .nlinks {
   display: none;
   gap: 1.25rem;
