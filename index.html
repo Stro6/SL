@@ -25,7 +25,7 @@
 <meta property="og:image" content="https://stromatic.tech/assets/img/og-default.png"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
-<meta property="og:image:alt" content="Stromatic Media ? studio-quality brand and growth work, fixed pricing, 24-hour turnaround"/>
+<meta property="og:image:alt" content="Stromatic Media - studio-quality brand and growth work, fixed pricing, 24-hour turnaround"/>
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Home | Stromatic Media"/>
@@ -33,7 +33,7 @@
 <meta name="twitter:image" content="https://stromatic.tech/assets/img/og-default.png"/>
 
 <link rel="icon" href="/favicon.ico" sizes="any"/>
-<link rel="icon" href="/assets/img/favicons/icon.svg" type="image/svg+xml"/>
+<link rel="icon" href="/assets/img/favicons/icon-192.png" type="image/png"/>
 <link rel="apple-touch-icon" href="/assets/img/favicons/apple-touch-icon.png"/>
 <link rel="manifest" href="/site.webmanifest"/>
 <link rel="sitemap" type="application/xml" href="/sitemap.xml"/>
@@ -167,6 +167,30 @@ body::before{
   mix-blend-mode:multiply;
 }
 
+.skip-link{
+  position:absolute;
+  left:-9999px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+.skip-link:focus{
+  position:fixed;
+  left:1rem;
+  top:1rem;
+  width:auto;
+  height:auto;
+  padding:.75rem 1.1rem;
+  background:var(--btn);
+  color:#FDFBFF;
+  z-index:1200;
+  border-radius:999px;
+  text-decoration:none;
+  outline:2px solid #fff;
+  outline-offset:2px;
+}
+
 /* ORBS */
 .orb{position:absolute;border-radius:50%;pointer-events:none;z-index:1;
   background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.9),rgba(184,165,255,.35) 40%,rgba(156,222,255,.25) 80%);
@@ -201,6 +225,7 @@ nav.sc{
   background:var(--chrome);
   box-shadow:inset -4px -4px 10px rgba(120,100,180,.25),inset 2px 2px 6px rgba(255,255,255,.7),0 4px 12px rgba(184,165,255,.3);
 }
+.nlogo img.lsym{display:block;object-fit:cover;background:transparent}
 .nlinks{display:flex;gap:2rem;list-style:none}
 .nlinks a{font-family:var(--fb);font-size:.88rem;font-weight:500;color:var(--ink-s);text-decoration:none;transition:color .2s}
 .nlinks a:hover{color:var(--ink)}
@@ -321,7 +346,7 @@ nav.sc{
 .bpri:hover{transform:translateY(-3px);background:var(--btn-h);box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 20px 52px rgba(184,165,255,.48),0 4px 14px rgba(28,16,56,.28)}
 .bpri:hover::before{opacity:1}
 .bpri span,.bpri::after{position:relative;z-index:1}
-.bpri::after{content:'->';transition:transform .25s}
+.bpri::after{content:'\2192';transition:transform .25s}
 .bpri:hover::after{transform:translateX(4px)}
 
 .bsec{
@@ -335,7 +360,7 @@ nav.sc{
   transition:background .2s,transform .2s var(--ease);
 }
 .bsec:hover{background:var(--glass-b);transform:translateY(-2px)}
-.bsec::after{content:'->'}
+.bsec::after{content:'\2192'}
 
 .hticker{
   margin-top:5rem;
@@ -495,7 +520,7 @@ section{content-visibility:auto;contain-intrinsic-size:1px 900px}
 .sc-list li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--chrome);flex-shrink:0;box-shadow:0 2px 4px rgba(184,165,255,.4)}
 .sc-lnk{display:inline-flex;align-items:center;gap:.4rem;margin-top:1.25rem;font-family:var(--fb);font-size:.85rem;font-weight:600;color:var(--ink-2);text-decoration:none;transition:gap .2s}
 .sc-lnk:hover{gap:.7rem}
-.sc-lnk::after{content:'->'}
+.sc-lnk::after{content:'\2192'}
 .sc-meta{
   margin-top:1.5rem;padding-top:1.1rem;
   border-top:1px dashed var(--bo-d);
@@ -571,7 +596,7 @@ section{content-visibility:auto;contain-intrinsic-size:1px 900px}
 .home-svc-name{font-family:var(--fd);font-size:1.25rem;font-weight:800;margin:.5rem 0 .35rem;color:var(--ink);letter-spacing:-.02em}
 .home-svc-blurb{font-size:.9rem;color:var(--ink-s);line-height:1.55;margin-bottom:1rem}
 .home-svc-cta{font-family:var(--fb);font-size:.85rem;font-weight:600;color:var(--ink-2)}
-.work-placeholder{padding:3rem 2.5rem 4rem}
+.work-placeholder{padding:2rem 2.5rem 3rem}
 @media(max-width:768px){.home-svc-preview{padding-top:2.5rem}.work-placeholder{padding:3.5rem 1.25rem}}
 
 /* CASES */
@@ -767,7 +792,7 @@ select option{background:#FDFBFF;color:var(--ink)}
   transform:translateX(-50%) translateY(0);
   opacity:1;pointer-events:auto;
 }
-.sticky-cta::after{content:'->'}
+.sticky-cta::after{content:'\2192'}
 
 /* FOOTER */
 footer{
@@ -1189,4 +1214,5 @@ if(contactForm){
 </script>
 </body>
 </html>
+
 
