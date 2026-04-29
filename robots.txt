@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /admin/
-Disallow: /api/
 
-Sitemap: https://stro6.github.io/SL/sitemap.xml
+Sitemap: https://stromatic.tech/sitemap.xml
