@@ -63,7 +63,7 @@
     "addressCountry": "CA"
   },
   "areaServed": "Worldwide",
-  "priceRange": "$40 - $199.99",
+  "priceRange": "$59 - $299",
   "sameAs": []
 }
 </script>
@@ -590,6 +590,8 @@ section{content-visibility:auto;contain-intrinsic-size:1px 900px}
 .home-svc-preview{position:relative;padding-top:4rem}
 .home-svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-top:2.5rem}
 @media(min-width:900px){.home-svc-grid{grid-template-columns:repeat(4,1fr);gap:1.5rem}}
+.home-svc-card.custom-card{grid-column:auto}
+@media(min-width:900px){.home-svc-card.custom-card{grid-column:2/span 2}}
 .home-svc-card{
   border-radius:24px;background:var(--glass-b);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
   border:1px solid var(--bo);box-shadow:0 10px 36px rgba(184,165,255,.1);overflow:hidden;transition:transform .3s var(--ease),box-shadow .3s;
@@ -987,11 +989,11 @@ footer{
     <h2 class="stitle r2" id="home-svc-title">Pick what you <em>need.</em></h2>
     <p class="r3" style="margin-top:1rem;max-width:560px;color:var(--ink-s);font-size:1rem;line-height:1.7">Logo pack, SEO audit, brand kit, and 1:1 mentor calls &mdash; upfront pricing, one brief per checkout.</p>
     <div class="home-svc-grid r">
-      <article class="home-svc-card"><a href="./services/mentor-1on1.html" class="home-svc-link" onclick="window.plausible && plausible('Service Card Click', { props: { service: 'mentor-1on1' } })"><span class="home-svc-price">$40</span><h3 class="home-svc-name">1:1 Mentor call</h3><p class="home-svc-blurb">30 minutes with the specialist you choose.</p><span class="home-svc-cta">Start brief &rarr;</span></a></article>
-      <article class="home-svc-card"><a href="./services/logo-pack.html" class="home-svc-link" onclick="window.plausible && plausible('Service Card Click', { props: { service: 'logo-pack' } })"><span class="home-svc-price">$99.99</span><h3 class="home-svc-name">Logo Pack</h3><p class="home-svc-blurb">Four directions. One identity.</p><span class="home-svc-cta">Start brief &rarr;</span></a></article>
-      <article class="home-svc-card"><a href="./services/seo-audit.html" class="home-svc-link" onclick="window.plausible && plausible('Service Card Click', { props: { service: 'seo-audit' } })"><span class="home-svc-price">$199.99</span><h3 class="home-svc-name">Full SEO Audit</h3><p class="home-svc-blurb">Technical and content audit as a PDF.</p><span class="home-svc-cta">Start brief &rarr;</span></a></article>
-      <article class="home-svc-card"><a href="./services/brand-kit.html" class="home-svc-link" onclick="window.plausible && plausible('Service Card Click', { props: { service: 'brand-kit' } })"><span class="home-svc-price">$149.99</span><h3 class="home-svc-name">Brand Kit</h3><p class="home-svc-blurb">Voice, palette, and usage in one guide.</p><span class="home-svc-cta">Start brief &rarr;</span></a></article>
-      <article class="home-svc-card"><a href="./services/custom-package.html" class="home-svc-link" onclick="window.plausible && plausible('Service Card Click', { props: { service: 'custom-package' } })"><span class="home-svc-price">Custom quote</span><h3 class="home-svc-name">Custom Package</h3><p class="home-svc-blurb">Tailored scope for multi-service or custom needs.</p><span class="home-svc-cta">Get quote &rarr;</span></a></article>
+      <article class="home-svc-card"><a href="./services/mentor-1on1.html" class="home-svc-link" onclick="window.plausible && plausible('Service Card Click', { props: { service: 'mentor-1on1' } })"><span class="home-svc-price">$59</span><h3 class="home-svc-name">1:1 Mentor call</h3><p class="home-svc-blurb">30 minutes with the specialist you choose.</p><span class="home-svc-cta">Start brief &rarr;</span></a></article>
+      <article class="home-svc-card"><a href="./services/logo-pack.html" class="home-svc-link" onclick="window.plausible && plausible('Service Card Click', { props: { service: 'logo-pack' } })"><span class="home-svc-price">$129.99</span><h3 class="home-svc-name">Logo Pack</h3><p class="home-svc-blurb">Four directions. One identity.</p><span class="home-svc-cta">Start brief &rarr;</span></a></article>
+      <article class="home-svc-card"><a href="./services/seo-audit.html" class="home-svc-link" onclick="window.plausible && plausible('Service Card Click', { props: { service: 'seo-audit' } })"><span class="home-svc-price">$299</span><h3 class="home-svc-name">Full SEO Audit</h3><p class="home-svc-blurb">Technical and content audit as a PDF.</p><span class="home-svc-cta">Start brief &rarr;</span></a></article>
+      <article class="home-svc-card"><a href="./services/brand-kit.html" class="home-svc-link" onclick="window.plausible && plausible('Service Card Click', { props: { service: 'brand-kit' } })"><span class="home-svc-price">$199.99</span><h3 class="home-svc-name">Brand Kit</h3><p class="home-svc-blurb">Voice, palette, and usage in one guide.</p><span class="home-svc-cta">Start brief &rarr;</span></a></article>
+      <article class="home-svc-card custom-card"><a href="./services/custom-package.html" class="home-svc-link" onclick="window.plausible && plausible('Service Card Click', { props: { service: 'custom-package' } })"><span class="home-svc-price">Custom quote</span><h3 class="home-svc-name">Custom Package</h3><p class="home-svc-blurb">Tailored scope for multi-service or custom needs.</p><span class="home-svc-cta">Get quote &rarr;</span></a></article>
     </div>
   </div>
 </section>
