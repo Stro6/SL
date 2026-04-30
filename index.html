@@ -657,6 +657,72 @@ section{content-visibility:auto;contain-intrinsic-size:1px 900px}
 .faq-item h3{font-family:var(--fd);font-size:1.2rem;font-weight:700;letter-spacing:-.02em;color:var(--ink)}
 .faq-item p{margin-top:.6rem;color:var(--ink-s);line-height:1.68;font-size:.95rem}
 
+/* SEO BRIEF TEST */
+.seo-brief{
+  position:relative;
+}
+.seo-brief-wrap{
+  display:grid;
+  grid-template-columns:1.05fr 1fr;
+  gap:2rem;
+  margin-top:2.1rem;
+}
+.seo-brief-copy{
+  padding:2rem;
+  border-radius:24px;
+  background:var(--glass);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border:1px solid var(--bo);
+}
+.seo-brief-copy p{
+  color:var(--ink-s);
+  line-height:1.72;
+  font-size:.98rem;
+}
+.seo-brief-copy ul{
+  margin-top:1rem;
+  padding-left:1rem;
+  color:var(--ink-s);
+  line-height:1.7;
+}
+.seo-brief-form{
+  padding:2rem;
+  border-radius:24px;
+  background:var(--glass-b);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border:1px solid var(--bo);
+  box-shadow:0 10px 36px rgba(184,165,255,.12);
+}
+.seo-brief-form .frow{
+  margin-bottom:0;
+}
+.seo-brief-msg{
+  margin-top:1rem;
+  padding:.8rem .95rem;
+  border-radius:12px;
+  font-size:.85rem;
+  font-family:var(--fm);
+  letter-spacing:.02em;
+  border:1px solid var(--bo);
+  background:rgba(255,255,255,.65);
+  color:var(--ink-2);
+  display:none;
+}
+.seo-brief-msg.ok{
+  display:block;
+  border-color:rgba(76,175,80,.35);
+  color:#1f6b34;
+  background:rgba(76,175,80,.1);
+}
+.seo-brief-msg.err{
+  display:block;
+  border-color:rgba(244,67,54,.35);
+  color:#8f2d2d;
+  background:rgba(244,67,54,.09);
+}
+
 /* CONTACT */
 .contact{position:relative}
 .contact .orb-ct1{top:8%;left:-20px;width:100px;height:100px;animation-delay:-5s}
@@ -889,6 +955,8 @@ footer{
   .faq-item{padding:1.05rem 1rem}
   .faq-item h3{font-size:1.02rem}
   .faq-item p{font-size:.88rem}
+  .seo-brief-wrap{grid-template-columns:1fr}
+  .seo-brief-copy,.seo-brief-form{padding:1.4rem}
   .cont-in{gap:2.5rem}
   .cform{padding:1.85rem 1.35rem;border-radius:24px}
   .cftitle{font-size:1.35rem}
@@ -1040,6 +1108,56 @@ footer{
 </section>
 
 <!-- FAQ -->
+<section class="seo-brief" id="seo-brief">
+  <div class="mw">
+    <p class="slabel r">Stromatic Labs Beta</p>
+    <h2 class="stitle r2">Try the <em>SEO Brief</em> autopilot.</h2>
+    <div class="seo-brief-wrap r3">
+      <div class="seo-brief-copy">
+        <p>This beta sends your website context to our internal AI workflow and returns an SEO brief by email. It is the same pipeline we are productizing for Stromatic Labs.</p>
+        <ul>
+          <li>Primary keyword + supporting terms</li>
+          <li>Search intent + headline options</li>
+          <li>H2 outline + internal link ideas</li>
+          <li>Quick social post prompts</li>
+        </ul>
+      </div>
+      <form id="seo-brief-form" class="seo-brief-form">
+        <input type="text" id="seo_hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0"/>
+        <div class="fg">
+          <label for="sb_email">Email</label>
+          <input id="sb_email" name="client_email" type="email" placeholder="you@company.com" required/>
+        </div>
+        <div class="fg">
+          <label for="sb_url">Business URL</label>
+          <input id="sb_url" name="business_url" type="url" placeholder="https://example.com" required/>
+        </div>
+        <div class="frow">
+          <div class="fg">
+            <label for="sb_niche">Niche</label>
+            <input id="sb_niche" name="niche" type="text" placeholder="Dental clinic" required/>
+          </div>
+          <div class="fg">
+            <label for="sb_location">Location</label>
+            <input id="sb_location" name="location" type="text" placeholder="Miami, FL" required/>
+          </div>
+        </div>
+        <div class="fg">
+          <label for="sb_competitors">Competitors</label>
+          <input id="sb_competitors" name="competitors" type="text" placeholder="competitor1.com, competitor2.com" required/>
+        </div>
+        <div class="fg">
+          <label for="sb_goal">Goal keyword/topic</label>
+          <input id="sb_goal" name="goal" type="text" placeholder="rank for emergency dentist miami" required/>
+        </div>
+        <button type="submit" class="fsub" id="seo-brief-submit"><span>Generate SEO brief &rarr;</span></button>
+        <p class="fnote">Beta turnaround is usually under 10 minutes by email.</p>
+        <p id="seo-brief-msg" class="seo-brief-msg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
 <section class="faq" id="faq">
   <div class="mw">
     <p class="slabel r">FAQ</p>
@@ -1162,6 +1280,7 @@ footer{
 <a href="./services/" class="sticky-cta" id="stickyCta">Browse services</a>
 
 <script>
+window.SL_SEO_BRIEF_ENDPOINT = 'https://stromatic-seo-relay.stromaticmedia.workers.dev';
 const nav=document.getElementById('nv');
 const revealEls=document.querySelectorAll('.r,.r2,.r3');
 if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
@@ -1217,6 +1336,92 @@ if(contactForm){
     var g=contactForm.querySelector('[name="_gotcha"]');
     if(g&&g.value){e.preventDefault();return;}
     if(typeof window.plausible==='function')window.plausible('Contact Submitted');
+  });
+}
+
+const seoBriefForm = document.getElementById('seo-brief-form');
+const seoBriefMsg = document.getElementById('seo-brief-msg');
+const seoBriefSubmit = document.getElementById('seo-brief-submit');
+
+function setSeoBriefMsg(kind, text){
+  if(!seoBriefMsg) return;
+  seoBriefMsg.className = 'seo-brief-msg ' + (kind || '');
+  seoBriefMsg.textContent = text || '';
+}
+
+function getLastSeoBriefTs(){
+  try {
+    return Number(localStorage.getItem('sl_last_seo_brief_ts') || 0);
+  } catch (e) {
+    return 0;
+  }
+}
+
+function setLastSeoBriefTs(ts){
+  try {
+    localStorage.setItem('sl_last_seo_brief_ts', String(ts));
+  } catch (e) {
+    /* no-op */
+  }
+}
+
+if (seoBriefForm){
+  seoBriefForm.addEventListener('submit', async function(e){
+    e.preventDefault();
+
+    const honeypot = seoBriefForm.querySelector('#seo_hp');
+    if (honeypot && honeypot.value){
+      return;
+    }
+
+    const now = Date.now();
+    const last = getLastSeoBriefTs();
+    const cooldownMs = 60 * 1000;
+    if (last && now - last < cooldownMs){
+      setSeoBriefMsg('err', 'Please wait one minute before submitting another request.');
+      return;
+    }
+
+    setLastSeoBriefTs(now);
+    setSeoBriefMsg('', '');
+    if (seoBriefSubmit) seoBriefSubmit.disabled = true;
+
+    const formData = new FormData(seoBriefForm);
+    const payload = {
+      business_url: String(formData.get('business_url') || '').trim(),
+      niche: String(formData.get('niche') || '').trim(),
+      location: String(formData.get('location') || '').trim(),
+      competitors: String(formData.get('competitors') || '').trim(),
+      goal: String(formData.get('goal') || '').trim(),
+      client_email: String(formData.get('client_email') || '').trim(),
+      source: 'stromatic.tech',
+      page: window.location.pathname,
+      submitted_at: new Date().toISOString()
+    };
+
+    const endpoint = window.SL_SEO_BRIEF_ENDPOINT || '/api/seo-brief';
+
+    try {
+      const resp = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      if (!resp.ok){
+        throw new Error('Request failed');
+      }
+
+      if (typeof window.plausible === 'function'){
+        window.plausible('SEO Brief Submitted');
+      }
+      setSeoBriefMsg('ok', 'Request received. Your SEO brief is being generated and will be emailed shortly.');
+      seoBriefForm.reset();
+    } catch (err){
+      setSeoBriefMsg('err', 'Could not submit right now. Please try again in a minute or email stromaticmedia@gmail.com.');
+    } finally {
+      if (seoBriefSubmit) seoBriefSubmit.disabled = false;
+    }
   });
 }
 </script>
