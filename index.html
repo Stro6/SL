@@ -716,6 +716,12 @@ section{content-visibility:auto;contain-intrinsic-size:1px 900px}
   color:#1f6b34;
   background:rgba(76,175,80,.1);
 }
+.seo-brief-msg.pending{
+  display:block;
+  border-color:rgba(122,99,255,.35);
+  color:var(--ink-2);
+  background:rgba(122,99,255,.1);
+}
 .seo-brief-msg.err{
   display:block;
   border-color:rgba(244,67,54,.35);
@@ -1404,7 +1410,7 @@ if (seoBriefForm){
     const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
 
     try {
-      setSeoBriefMsg('', 'Generating your SEO brief. This can take up to a minute...');
+      setSeoBriefMsg('pending', 'Generating your SEO brief. This can take up to a minute...');
       const resp = await fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

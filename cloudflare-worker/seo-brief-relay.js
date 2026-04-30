@@ -7,7 +7,7 @@
  * - ALLOWED_ORIGIN: The website origin allowed to call this worker (e.g. https://stromatic.tech)
  */
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     if (request.method === "OPTIONS") {
       return new Response(null, {
         status: 204,
@@ -46,20 +46,25 @@ export default {
       }
     }
 
-    const n8nResponse = await fetch(env.N8N_WEBHOOK_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "x-api-key": env.N8N_API_KEY,
-      },
-      body: JSON.stringify(payload),
-    });
+    // Fire-and-forget to n8n so website UX stays fast.
+    ctx.waitUntil(
+      fetch(env.N8N_WEBHOOK_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-api-key": env.N8N_API_KEY,
+        },
+        body: JSON.stringify(payload),
+      }).then(async (res) => {
+        if (!res.ok) {
+          console.error("n8n request failed", res.status);
+        }
+      }).catch((err) => {
+        console.error("n8n request error", err && err.message ? err.message : err);
+      })
+    );
 
-    if (!n8nResponse.ok) {
-      return json({ error: "n8n request failed" }, 502, env);
-    }
-
-    return json({ ok: true }, 200, env);
+    return json({ ok: true, queued: true }, 202, env);
   },
 };
 
