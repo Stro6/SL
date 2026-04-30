@@ -1382,7 +1382,6 @@ if (seoBriefForm){
       return;
     }
 
-    setLastSeoBriefTs(now);
     setSeoBriefMsg('', '');
     if (seoBriefSubmit) seoBriefSubmit.disabled = true;
 
@@ -1409,16 +1408,27 @@ if (seoBriefForm){
       });
 
       if (!resp.ok){
-        throw new Error('Request failed');
+        let detail = '';
+        try {
+          const errJson = await resp.json();
+          detail = errJson && errJson.error ? String(errJson.error) : '';
+        } catch (e) {
+          /* no-op */
+        }
+        throw new Error(detail || ('Request failed (' + resp.status + ')'));
       }
 
+      setLastSeoBriefTs(now);
       if (typeof window.plausible === 'function'){
         window.plausible('SEO Brief Submitted');
       }
       setSeoBriefMsg('ok', 'Request received. Your SEO brief is being generated and will be emailed shortly.');
       seoBriefForm.reset();
     } catch (err){
-      setSeoBriefMsg('err', 'Could not submit right now. Please try again in a minute or email stromaticmedia@gmail.com.');
+      const reason = err && err.message ? err.message : '';
+      const base = 'Could not submit right now.';
+      const withReason = reason ? (base + ' Error: ' + reason + '.') : base;
+      setSeoBriefMsg('err', withReason + ' Please try again or email stromaticmedia@gmail.com.');
     } finally {
       if (seoBriefSubmit) seoBriefSubmit.disabled = false;
     }
