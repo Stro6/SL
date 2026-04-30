@@ -1399,13 +1399,19 @@ if (seoBriefForm){
     };
 
     const endpoint = window.SL_SEO_BRIEF_ENDPOINT || '/api/seo-brief';
+    const controller = new AbortController();
+    const timeoutMs = 45000;
+    const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
 
     try {
+      setSeoBriefMsg('', 'Generating your SEO brief. This can take up to a minute...');
       const resp = await fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
+        body: JSON.stringify(payload),
+        signal: controller.signal
       });
+      clearTimeout(timeoutId);
 
       if (!resp.ok){
         let detail = '';
@@ -1425,9 +1431,13 @@ if (seoBriefForm){
       setSeoBriefMsg('ok', 'Request received. Your SEO brief is being generated and will be emailed shortly.');
       seoBriefForm.reset();
     } catch (err){
+      clearTimeout(timeoutId);
       const reason = err && err.message ? err.message : '';
+      const isAbort = err && err.name === 'AbortError';
       const base = 'Could not submit right now.';
-      const withReason = reason ? (base + ' Error: ' + reason + '.') : base;
+      const withReason = isAbort
+        ? (base + ' The request timed out while waiting for processing.')
+        : (reason ? (base + ' Error: ' + reason + '.') : base);
       setSeoBriefMsg('err', withReason + ' Please try again or email stromaticmedia@gmail.com.');
     } finally {
       if (seoBriefSubmit) seoBriefSubmit.disabled = false;
